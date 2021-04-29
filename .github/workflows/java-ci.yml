@@ -24,4 +24,6 @@ jobs:
           mvn --batch-mode --update-snapshots exec:java -Pdatos
       - name: Build with Maven including integration tests
         run: mvn --batch-mode --update-snapshots verify -Pintegracion
-        
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
